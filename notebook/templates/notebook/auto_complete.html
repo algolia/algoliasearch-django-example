@@ -2,6 +2,73 @@
 
 {% block title %}Auto-complete{% endblock %}
 
+{% block content %}
+<div class="row">
+  <div class="col-sm-12">
+    <p class="lead">A modern auto-complete field based on <code>typeahead.js</code> + <code>Hogan</code> and <code>AlgoliaSearch JS Client</code> example.</p>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-sm-6 col-sm-offset-3">
+    <p class="text-center search-terms">
+    Try
+    <a href="javascript:void(0)">John</a>,
+    <a href="javascript:void(0)">Jonn</a>,
+    <a href="javascript:void(0)">s row</a>,
+    <a href="javascript:void(0)">roeb</a>
+    </p>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-sm-6 col-sm-offset-3">
+    <input id="q" placeholder="Search" autocomplete="off" autocorrect="false" spellcheck="false" type="search" />
+  </div>
+</div>
+
+{% endblock %}
+
 {% block javascript %}
 <script src="//cdn.jsdelivr.net/typeahead.js/0.11.1/typeahead.jquery.min.js"></script>
+<script src="//cdn.jsdelivr.net/hogan.js/3.0.2/hogan.min.js"></script>
+
+{% verbatim %}
+<script type="text/template" id="autocomplete">
+<p>
+  {{{ _highlightResult.name.value }}}({{{ _highlightResult.email.value }}})
+</p>
+</script>
+{% endverbatim %}
+
+<script>
+$(document).ready(function() {
+  var $inputField = $('#q');
+
+  var template = Hogan.compile($('#autocomplete').text());
+
+  var client = algoliasearch('{{ appID }}', '{{ searchKey }}');
+  var index = client.initIndex('{{ indexName }}');
+
+  $('.search-terms a').click(function(e) {
+    $inputField.val($(this).text()).change().focus();
+  });
+
+  $inputField.typeahead({hint: false}, {
+    source: index.ttAdapter(),
+    displayKey: 'email',
+    templates: {
+      suggestion: function(hit) {
+        return template.render(hit);
+      }
+    }
+  }).on('change', function(e) {
+    console.log('on(change): ' + $inputField.val());
+  }).on('keypress', function(e) {
+    console.log('on(submit): ' + $inputField.val());
+  }).on('typeahead:selected', function(e) {
+    console.log('on(selected): ' + $inputField.val());
+  });
+});
+</script>
 {% endblock %}

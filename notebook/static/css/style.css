@@ -15,3 +15,42 @@ body {
 .mark, mark {
   padding: 0;
 }
+
+.twitter-typeahead {
+  width: 100%;
+}
+
+.twitter-typeahead .tt-input, .twitter-typeahead .tt-hint {
+  width: 100%;
+  margin: 0px;
+  padding: 8px 12px;
+  outline: none;
+}
+
+.twitter-typeahead .tt-input:focus {
+  border: 2px solid #0097cf;
+}
+
+.twitter-typeahead .tt-hint {
+  color: #999;
+}
+
+.twitter-typeahead .tt-dropdown-menu {
+  width: 100%;
+  padding: 0;
+  background-color: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-top: 0px;
+}
+
+.twitter-typeahead .tt-dropdown-menu .tt-suggestion {
+  text-align: left;
+  padding: 3px 20px;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.twitter-typeahead .tt-dropdown-menu .tt-suggestion.tt-cursor {
+  color: #fff;
+  background-color: #0097cf;
+}

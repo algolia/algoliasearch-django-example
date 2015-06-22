@@ -12,19 +12,20 @@
 
 <div class="row">
   <div class="col-sm-6 col-sm-offset-3">
-    <input name="q" placeholder="Search" id="q" autocomplete="off" autocorrect ="false" spellcheck="false" class="form-control" type="search" />
+    <input id="q" name="q" placeholder="Search" autocomplete="off" autocorrect="false" spellcheck="false" class="form-control" type="search" />
   </div>
 </div>
-  <div class="row">
-    <div class="col-sm-6 col-sm-offset-3">
+
+<div class="row">
+  <div class="col-sm-6 col-sm-offset-3">
     <p class="text-center search-terms">
-      Try
-      <a href="javascript:void(0)">John</a>,
-      <a href="javascript:void(0)">Jonn</a>,
-      <a href="javascript:void(0)">s row</a>,
-      <a href="javascript:void(0)">roeb</a>
+    Try
+    <a href="javascript:void(0)">John</a>,
+    <a href="javascript:void(0)">Jonn</a>,
+    <a href="javascript:void(0)">s row</a>,
+    <a href="javascript:void(0)">roeb</a>
     </p>
-    </div>
+  </div>
 </div>
 
 <div class="row">
@@ -56,21 +57,21 @@
 
 {% verbatim %}
 <script type="text/template" id="hit-template">
-  <tr>
-    <td>{{{ _highlightResult.name.value }}}</td>
-    <td>{{{ _highlightResult.company.value }}}</td>
-    <td><a href="mailto:{{ email }}">{{{ _highlightResult.email.value }}}</a></td>
-  </tr>
+<tr>
+  <td>{{{ _highlightResult.name.value }}}</td>
+  <td>{{{ _highlightResult.company.value }}}</td>
+  <td><a href="mailto:{{ email }}">{{{ _highlightResult.email.value }}}</a></td>
+</tr>
 </script>
 {% endverbatim %}
 
 <script>
 $(document).ready(function() {
-  $inputField = $('#q');
-  $hits = $('#hits');
-  $hitsTable = $('#hits-table');
-  $noHits = $('#no-hits');
-  $hitsStat = $('#hits-stat');
+  var $inputField = $('#q');
+  var $hits = $('#hits');
+  var $hitsTable = $('#hits-table');
+  var $noHits = $('#no-hits');
+  var $hitsStat = $('#hits-stat');
 
   var hitTemplate = Hogan.compile($('#hit-template').text());
 
@@ -80,7 +81,7 @@ $(document).ready(function() {
   $('.search-terms a').click(function(e) {
     $inputField.val($(this).text()).change().focus();
     $inputField.keyup();
-  })
+  });
 
   $inputField.on('keyup', function() {
     var query = $inputField.val();
@@ -91,7 +92,7 @@ $(document).ready(function() {
     renderHits(data);
   });
 
-  helper.setQuery().search(); // first search
+  helper.search(); // first search
 
   function renderHits(content) {
     var hitsHtml = '';
