@@ -1,0 +1,17 @@
+body {
+  padding-top: 70px;
+}
+
+#hits-stat a {
+  display: inline-block;
+  background: #23282D;
+  padding: 1px 3px;
+}
+
+#hits-stat img {
+  height: 1em;
+}
+
+.mark, mark {
+  padding: 0;
+}

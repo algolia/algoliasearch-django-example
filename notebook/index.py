@@ -11,5 +11,8 @@ class ContactIndex(AlgoliaIndex):
             'unordered(web)'],
         'attributesForFaceting': ['city', 'company'],
         'customRanking': ['desc(followers)'],
-        'queryType': 'prefixAll'
+        'queryType': 'prefixAll',
+        'highlightPreTag': '<mark>',
+        'highlightPostTag': '</mark>',
+        'hitsPerPage': 15
     }
