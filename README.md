@@ -28,13 +28,13 @@ $ python manage.py createsuperuser # needed for the admin page
 
 ```bash
 $ python manage.py loaddata contacts.json
-$ ALGOLIA_APPLICATION_ID=XXXXX ALGOLIA_API_KEY=XXXXX python manage.py algolia_buildindex
+$ ALGOLIA_APPLICATION_ID=XXXXX ALGOLIA_API_KEY=XXXXX python manage.py algolia_reindex
 ```
 
 Or you can add your credentials in the `core/settings.py` and then start indexing:
 
 ```bash
-$ python manage.py algolia_buildindex
+$ python manage.py algolia_reindex
 ```
 
 ## Start the application
