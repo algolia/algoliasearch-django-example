@@ -1,10 +1,10 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.conf import settings
 from django.contrib.algoliasearch import get_adapter
 from .models import Contact
 
 def index(request):
-    return render(request, 'notebook/index.html')
+    return redirect('notebook:instant_search', permanent=True)
 
 def auto_complete(request):
     context = {
