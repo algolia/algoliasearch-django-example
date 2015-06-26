@@ -52,3 +52,5 @@ $ python manage.py runserver
 Enjoy your `http://localhost:8000` examples!
 
 ![Instant-search](instant-search.png)
+
+![Auto-complete](auto-complete.png)
