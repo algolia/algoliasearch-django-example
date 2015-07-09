@@ -104,9 +104,10 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 # AlgoliaSearch settings
-ALGOLIA_APPLICATION_ID = os.getenv('ALGOLIA_APPLICATION_ID')
-ALGOLIA_API_KEY = os.getenv('ALGOLIA_API_KEY')
-ALGOLIA_SEARCH_API_KEY = os.getenv('ALGOLIA_SEARCH_API_KEY')
-ALGOLIA_INDEX_PREFIX = 'notebook'
-ALGOLIA_INDEX_SUFFIX = 'dev'
-
+ALGOLIA = {
+    'APPLICATION_ID': os.getenv('ALGOLIA_APPLICATION_ID'),
+    'API_KEY': os.getenv('ALGOLIA_API_KEY'),
+    'SEARCH_API_KEY': os.getenv('ALGOLIA_SEARCH_API_KEY'),
+    'INDEX_PREFIX': 'notebook',
+    'INDEX_SUFFIX': 'dev'
+}
