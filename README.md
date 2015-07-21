@@ -32,7 +32,7 @@ You can add your credentials in `core/settings.py` or you can export them in you
 ```bash
 $ export ALGOLIA_APPLICATION_ID=XXXXX
 $ export ALGOLIA_API_KEY=XXXXX
-$ export ALGOLIA_SEARCH_ONLY_API_KEY=XXXXX
+$ export ALGOLIA_SEARCH_API_KEY=XXXXX
 ```
 
 ## Populate the DB and start indexing
