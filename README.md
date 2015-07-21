@@ -21,29 +21,28 @@ $ pip install algoliasearch-django
 ```bash
 $ git clone https://github.com/algolia/algoliasearch-django-example
 $ cd algoliasearch-django-example
-$ python manage.py createsuperuser # needed for the admin page
+$ python manage.py migrate
+$ python manage.py createsuperuser
 ```
 
-## Populate your DB and start indexing
+## Configure the credentials
+
+You can add your credentials in `core/settings.py` or you can export them in your environment:
+
+```bash
+$ export ALGOLIA_APPLICATION_ID=XXXXX
+$ export ALGOLIA_API_KEY=XXXXX
+$ export ALGOLIA_SEARCH_ONLY_API_KEY=XXXXX
+```
+
+## Populate the DB and start indexing
 
 ```bash
 $ python manage.py loaddata contacts.json
-$ ALGOLIA_APPLICATION_ID=XXXXX ALGOLIA_API_KEY=XXXXX python manage.py algolia_reindex
-```
-
-Or you can add your credentials in the `core/settings.py` and then start indexing:
-
-```bash
 $ python manage.py algolia_reindex
 ```
 
 ## Start the application
-
-```bash
-$ ALGOLIA_APPLICATION_ID=XXXXX ALGOLIA_API_KEY=XXXXX ALGOLIA_SEARCH_API_KEY=XXXXX python manage.py runserver
-```
-
-Or if you added your credentials in the setting file:
 
 ```bash
 $ python manage.py runserver

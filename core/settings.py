@@ -108,6 +108,6 @@ ALGOLIA = {
     'APPLICATION_ID': os.getenv('ALGOLIA_APPLICATION_ID'),
     'API_KEY': os.getenv('ALGOLIA_API_KEY'),
     'SEARCH_API_KEY': os.getenv('ALGOLIA_SEARCH_API_KEY'),
-    'INDEX_PREFIX': 'notebook',
+    'INDEX_PREFIX': 'DjangoExample',
     'INDEX_SUFFIX': 'dev'
 }
