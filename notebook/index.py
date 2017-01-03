@@ -6,7 +6,7 @@ class ContactIndex(AlgoliaIndex):
             'state', 'zip_code', 'phone', 'fax', 'web', 'followers')
 
     settings = {
-        'attributesToIndex': ['name', 'email', 'company', 'city', 'county',
+        'searchableAttributes': ['name', 'email', 'company', 'city', 'county',
             'unordered(address)', 'state', 'zip_code', 'phone', 'fax',
             'unordered(web)'],
         'attributesForFaceting': ['city', 'company'],
