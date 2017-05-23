@@ -57,3 +57,7 @@ docs/_build/
 target/
 
 *.sqlite3
+
+# IDE Files
+*.iml
+.idea/
