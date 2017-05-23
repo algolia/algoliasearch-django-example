@@ -1,4 +1,4 @@
-from django.contrib.algoliasearch import AlgoliaIndex
+from algoliasearch_django import AlgoliaIndex
 
 
 class ContactIndex(AlgoliaIndex):

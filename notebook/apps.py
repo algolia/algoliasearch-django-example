@@ -1,6 +1,5 @@
 from django.apps import AppConfig
-#import django.contrib.algoliasearch as AlgoliaSearch
-from django.contrib import algoliasearch
+import algoliasearch_django as algoliasearch
 
 from .index import ContactIndex
 

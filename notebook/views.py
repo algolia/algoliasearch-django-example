@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.conf import settings
-from django.contrib.algoliasearch import get_adapter
+from algoliasearch_django import get_adapter
 from .models import Contact
 
 def index(request):
