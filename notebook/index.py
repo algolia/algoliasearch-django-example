@@ -3,7 +3,7 @@ from algoliasearch_django import AlgoliaIndex
 
 class ContactIndex(AlgoliaIndex):
     fields = ('name', 'email', 'company', 'address', 'city', 'county',
-              'state', 'zip_code', 'phone', 'fax', 'web', 'followers')
+              'state', 'zip_code', 'phone', 'fax', 'web', 'followers', '_tags')
 
     settings = {
         'searchableAttributes': ['name', 'email', 'company', 'city', 'county',

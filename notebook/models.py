@@ -1,4 +1,5 @@
 from django.db import models
+from taggit.managers import TaggableManager
 
 
 class Contact(models.Model):
@@ -18,3 +19,11 @@ class Contact(models.Model):
     created_at = models.DateTimeField(auto_now=False, auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
+    tags = TaggableManager()
+
+    def _tags(self):
+        return [t.name for t in self.tags.all()]
+
+    def __str__(self):
+        return "%s <%s> @ %s (%s, %s %s)" % (
+        self.name, self.email, self.company, self.address, self.zip_code, self.city)
