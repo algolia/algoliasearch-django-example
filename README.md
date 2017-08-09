@@ -5,7 +5,7 @@ This is a Django application indexing 500 `Contact` objects and providing auto-c
 A `Contact` is defined by:
 
 * A name
-* An email adress
+* An email address
 * A company name
 
 An [Algolia](https://www.algolia.com) account is required to test it.
