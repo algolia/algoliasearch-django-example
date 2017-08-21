@@ -1,6 +1,14 @@
 from django.db import models
 
 
+class Account(models.Model):
+    username = models.CharField(max_length=40)
+    service = models.CharField(max_length=40)
+
+    def __str__(self):
+        return self.username + "@" + self.service
+
+
 class Contact(models.Model):
     name = models.CharField(max_length=40)
     email = models.EmailField(max_length=60)
@@ -22,3 +30,9 @@ class Contact(models.Model):
 
     def __str__(self):
         return self.name
+
+    def account_names(self):
+        return [str(account) for account in self.accounts.all()]
+
+    def account_ids(self):
+        return [account.id for account in self.accounts.all()]
