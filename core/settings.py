@@ -25,6 +25,9 @@ SECRET_KEY = 'r#gjo=@^vab5b_f&)4w4hubfb&1lb8l67!y5m073z3!t44-1&&'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+# TESTING: Check if running tests
+import sys
+TESTING = sys.argv[1:2] == ['test']
 ALLOWED_HOSTS = []
 
 
