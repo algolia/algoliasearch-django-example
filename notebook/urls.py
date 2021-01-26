@@ -7,3 +7,5 @@ urlpatterns = [
     url(r'^auto-complete$', views.auto_complete, name='auto_complete'),
     url(r'^instant-search$', views.instant_search, name='instant_search')
 ]
+
+app_name = 'notebook'
